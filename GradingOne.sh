@@ -26,25 +26,20 @@ calculateOverallGrade() {
 }
 
 # Prompt user to input subject marks
-# shellcheck disable=SC2162
-read -p "Enter LIE marks: " LIE
+read -r -p "Enter LIE marks: " LIE
 until [[ "$LIE" =~ ^[0-9]+(\.[0-9]+)?$ ]]; do
-    # shellcheck disable=SC2162
-    read -p "Please enter a valid number for LIE marks: " LIE
+    read -r -p "Please enter a valid number for LIE marks: " LIE
 done
 
 # shellcheck disable=SC2162
 read -p "Enter WEB-DESIGN marks: " WEB_DESIGN
 until [[ "$WEB_DESIGN" =~ ^[0-9]+(\.[0-9]+)?$ ]]; do
-    # shellcheck disable=SC2162
-    read -p "Please enter a valid number for WEB-DESIGN marks: " WEB_DESIGN
+    read -r -p "Please enter a valid number for WEB-DESIGN marks: " WEB_DESIGN
 done
 
-# shellcheck disable=SC2162
-read -p "Enter ORACLE marks: " ORACLE
+read -r -p "Enter ORACLE marks: " ORACLE
 until [[ "$ORACLE" =~ ^[0-9]+(\.[0-9]+)?$ ]]; do
-    # shellcheck disable=SC2162
-    read -p "Please enter a valid number for ORACLE marks: " ORACLE
+    read -r -p "Please enter a valid number for ORACLE marks: " ORACLE
 done
 
 calculateOverallGrade "$LIE" "$WEB_DESIGN" "$ORACLE"
